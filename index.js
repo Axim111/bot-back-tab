@@ -2,12 +2,14 @@ import TelegramBot from "node-telegram-bot-api"
 
 import express from 'express'
 
+import cors from 'cors'
+
 const token = '7128645576:AAEZSBgVok15wNELrDKDZEp43-DbsYGFzp8';
 
 const webUrl = "https://gorgeous-dusk-a3880d.netlify.app/"
 
-const express = require('express');
-const cors = require('cors');
+
+
 
 const app = express();
 
@@ -77,8 +79,6 @@ bot.on('message', async (msg) => {
     bot.sendMessage(msg.chat.id, `бан`)
   }
 });
-
-
 const PORT = 8000;
 
 app.listen(PORT, () => console.log('server started on PORT ' + PORT))
