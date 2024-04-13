@@ -7,16 +7,23 @@ const token = '7128645576:AAEZSBgVok15wNELrDKDZEp43-DbsYGFzp8';
 const webUrl = "https://gorgeous-dusk-a3880d.netlify.app/"
 // const webAppUrl = "/"
 
-//t.me/tab_my_main_temporary_bot
+//t.me/testo_ax_my_bot
 
-const app = express()
 
-app.get('/', function (req, res) {
-  res.send('Hello World')
-})
 
-app.listen(3000)
-const bot = new TelegramBot(token, { polling: true });
+
+
+// const app = express()
+
+// app.get('/', function (req, res) {
+//   res.send('Hello World')
+// })
+
+// app.listen(3000)
+// const bot = new TelegramBot(token, { polling: true });
+
+
+
 
 
 // bot.onText(/\/echo (.+)/, (msg, match) => {
