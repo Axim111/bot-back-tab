@@ -17,7 +17,8 @@ const webUrl = "https://gorgeous-dusk-a3880d.netlify.app/"
 // })
 
 // app.listen(3000)
-const bot = new TelegramBot(token);
+// const bot = new TelegramBot(token, { polling: true });
+const bot = new TelegramBot(token, { polling: true });
 
 
 // bot.onText(/\/echo (.+)/, (msg, match) => {
