@@ -11,8 +11,6 @@ const webUrl = "https://gorgeous-dusk-a3880d.netlify.app/"
 
 
 
-
-
 // const app = express()
 
 // app.get('/', function (req, res) {
@@ -20,10 +18,7 @@ const webUrl = "https://gorgeous-dusk-a3880d.netlify.app/"
 // })
 
 // app.listen(3000)
-// const bot = new TelegramBot(token, { polling: true });
-
-
-
+const bot = new TelegramBot(token, { polling: true });
 
 
 // bot.onText(/\/echo (.+)/, (msg, match) => {
