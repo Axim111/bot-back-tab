@@ -5,19 +5,15 @@ import express from 'express'
 const token = '7128645576:AAEZSBgVok15wNELrDKDZEp43-DbsYGFzp8';
 
 const webUrl = "https://gorgeous-dusk-a3880d.netlify.app/"
-// const webAppUrl = "/"
 
-//t.me/testo_ax_my_bot
+const express = require('express');
+const cors = require('cors');
 
+const app = express();
 
-// const app = express()
+app.use(express.json());
+app.use(cors());
 
-// app.get('/', function (req, res) {
-//   res.send('Hello World')
-// })
-
-// app.listen(3000)
-// const bot = new TelegramBot(token, { polling: true });
 const bot = new TelegramBot(token, { polling: true });
 
 
@@ -81,3 +77,8 @@ bot.on('message', async (msg) => {
     bot.sendMessage(msg.chat.id, `бан`)
   }
 });
+
+
+const PORT = 8000;
+
+app.listen(PORT, () => console.log('server started on PORT ' + PORT))
