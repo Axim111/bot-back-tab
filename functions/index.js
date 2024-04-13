@@ -1,50 +1,80 @@
-const express = require('express');
-const serverless = require('serverless-http');
-const app = express();
-const router = express.Router();
+import TelegramBot from "node-telegram-bot-api"
+import serverless from "serverless-http"
+exports.handler = async (event, context) => {
+  const token = '7128645576:AAEZSBgVok15wNELrDKDZEp43-DbsYGFzp8';
 
-let records = [];
+  const webUrl = "https://gorgeous-dusk-a3880d.netlify.app/"
 
-//Get all students
-router.get('/', (req, res) => {
-  res.send('App is running..');
-});
 
-//Create new record
-router.post('/add', (req, res) => {
-  res.send('New record added.');
-});
 
-//delete existing record
-router.delete('/', (req, res) => {
-  res.send('Deleted existing record');
-});
 
-//updating existing record
-router.put('/', (req, res) => {
-  res.send('Updating existing record');
-});
 
-//showing demo records
-router.get('/demo', (req, res) => {
-  res.json([
+
+  const bot = new TelegramBot(token, { polling: true });
+
+
+  // bot.onText(/\/echo (.+)/, (msg, match) => {
+
+  //   const chatId = msg.chat.id;
+  //   const resp = match[1];
+
+  //   bot.sendMessage(chatId, resp);
+  // });
+  const commands = [
     {
-      id: '001',
-      name: 'Smith',
-      email: 'smith@gmail.com',
+
+      command: "menu",
+      description: "меню"
+
     },
     {
-      id: '002',
-      name: 'Sam',
-      email: 'sam@gmail.com',
+
+      command: "start",
+      description: "Запуск бота"
+
     },
     {
-      id: '003',
-      name: 'lily',
-      email: 'lily@gmail.com',
-    },
-  ]);
-});
 
-app.use('/.netlify/functions/api', router);
-module.exports.handler = serverless(app);
+      command: "ref",
+      description: "Получить реферальную ссылку"
+
+    },
+    {
+
+      command: "help",
+      description: "Раздел помощи"
+
+    },
+
+  ]
+
+  bot.setMyCommands(commands);
+  bot.on('message', async (msg) => {
+    const text = msg.text
+    const chatId = msg.chat.id
+    console.log(msg)
+
+    if (msg.text == '/menu') {
+
+      await bot.sendMessage(msg.chat.id, `Меню бота`, {
+        reply_markup: {
+          inline_keyboard: [
+            [{ text: 'Кнопка 1', web_app: { url: webUrl } }],
+            [{ text: 'Кнопка 2', callback_data: 'data 2' }],
+            [{ text: 'Кнопка 3', callback_data: 'text 3' }]
+          ]
+        }
+
+
+      })
+
+    }
+    else if (msg.text == "1") {
+      bot.sendMessage(msg.chat.id, `бан`)
+    }
+  });
+  return {
+    statusCode: 200,
+    body: JSON.stringify({ message: 'Telegram bot initialized' }),
+  };
+};
