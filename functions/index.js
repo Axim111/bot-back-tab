@@ -1,5 +1,5 @@
 import TelegramBot from "node-telegram-bot-api"
-
+import serverless from "serverless-http"
 
 
 const token = '7128645576:AAEZSBgVok15wNELrDKDZEp43-DbsYGFzp8';
