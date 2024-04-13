@@ -10,14 +10,13 @@ const webUrl = "https://gorgeous-dusk-a3880d.netlify.app/"
 //t.me/testo_ax_my_bot
 
 
+const app = express()
 
-// const app = express()
+app.get('/', function (req, res) {
+  res.send('Hello World')
+})
 
-// app.get('/', function (req, res) {
-//   res.send('Hello World')
-// })
-
-// app.listen(3000)
+app.listen(3000)
 const bot = new TelegramBot(token, { polling: true });
 
 
