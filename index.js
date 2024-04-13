@@ -2,12 +2,12 @@ import TelegramBot from "node-telegram-bot-api"
 
 import express from 'express'
 
-const token = '7138409167:AAGCQ-0w101zQYtLYxsxlvdUtwiEYGgF_yI';
+const token = '7128645576:AAEZSBgVok15wNELrDKDZEp43-DbsYGFzp8';
 
 const webUrl = "https://gorgeous-dusk-a3880d.netlify.app/"
 // const webAppUrl = "/"
 
-//t.me/testo_ax_my_bot
+//t.me/tab_my_main_temporary_bot
 
 const app = express()
 
