@@ -76,7 +76,7 @@ bot.on('message', async (msg) => {
 });
 
 
-let urlHook = "https://api.render.com/deploy/srv-coe2nd20si5c7399vn80?key=yfiCbOiZj9w"
+let urlHook = "https://bot-back-tab.onrender.com"
 // bot.telegram.setWebhook(urlHook + "/bot" + `${token}`)
 // bot.startWebhook(urlHook + "/bot" + `${token}`, null, 8800)
 
