@@ -76,7 +76,7 @@ bot.on('message', async (msg) => {
 });
 
 
-let urlHook = "https://c54d-37-140-17-7.ngrok-free.app"
+let urlHook = "https://api.render.com/deploy/srv-coe2c6gl6cac73bsq300?key=JBsSmIWwkTo"
 // bot.telegram.setWebhook(urlHook + "/bot" + `${token}`)
 // bot.startWebhook(urlHook + "/bot" + `${token}`, null, 8800)
 
