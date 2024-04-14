@@ -8,7 +8,6 @@ const webUrl = "https://gorgeous-dusk-a3880d.netlify.app/"
 // const webAppUrl = "/"
 
 //t.me/testo_ax_my_bot
-console.log(12)
 const app = express()
 
 app.get('/', function (req, res) {
