@@ -11,7 +11,10 @@ const webUrl = "https://gorgeous-dusk-a3880d.netlify.app/"
 
 const bot = new Telegraf(token);
 
+bot.start((ctx) => ctx.reply('Welcome'))
+bot.help((ctx) => ctx.reply('Send me a sticker'))
 
+bot.hears('hi', (ctx) => ctx.reply('Hey there'))
 
 
 
@@ -73,7 +76,7 @@ bot.on('message', async (msg) => {
 });
 
 
-
-let urlHook = "https://api.render.com/deploy/srv-codtor0l6cac73bqc05g?key=8ExSdyDod9E"
+let urlHook = "https://api.render.com/deploy/srv-coe2c6gl6cac73bsq300?key=JBsSmIWwkTo"
 bot.telegram.setWebhook(urlHook + "/bot" + `${token}`)
 bot.startWebhook(urlHook + "/bot" + `${token}`, null, 8800)
+
