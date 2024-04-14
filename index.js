@@ -7,17 +7,11 @@ const token = '7138409167:AAGCQ-0w101zQYtLYxsxlvdUtwiEYGgF_yI';
 const webUrl = "https://gorgeous-dusk-a3880d.netlify.app/"
 //t.me/testo_ax_my_bot
 
-const app = express()
 
-app.get('/', function (req, res) {
-  res.send('Hello World')
-})
-
-app.listen(3000)
-
-const bot = new TelegramBot(token, { polling: true });
-
-
+const bot = new TelegramBot(token);
+let urlHook = "https://api.render.com/deploy/srv-codtor0l6cac73bqc05g?key=8ExSdyDod9E"
+bot.setWebHook(urlHook + "bot" + `${token}`)
+bot.startWebHook(urlHook + "bot" + `${token}`, null, 4000)
 
 const commands = [
   {
