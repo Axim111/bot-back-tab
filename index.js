@@ -11,7 +11,7 @@ const webUrl = "https://gorgeous-dusk-a3880d.netlify.app/"
 
 const bot = new Telegraf(token);
 
-bot.start((ctx) => ctx.sendMessage('Welcome'))
+bot.start((ctx) => ctx.sendMessage('Welcome1'))
 bot.help((ctx) => ctx.reply('Send me a sticker'))
 
 bot.hears('hi', (ctx) => ctx.reply('Hey there'))
