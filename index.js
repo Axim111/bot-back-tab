@@ -5,9 +5,7 @@ import express from 'express'
 const token = '7138409167:AAGCQ-0w101zQYtLYxsxlvdUtwiEYGgF_yI';
 
 const webUrl = "https://gorgeous-dusk-a3880d.netlify.app/"
-// const webAppUrl = "/"
 
-//t.me/testo_ax_my_bot
 const app = express()
 
 app.get('/', function (req, res) {
