@@ -76,7 +76,24 @@ bot.on('message', async (msg) => {
 });
 
 
-let urlHook = "https://api.render.com/deploy/srv-coe2c6gl6cac73bsq300?key=JBsSmIWwkTo"
-bot.telegram.setWebhook(urlHook + "/bot" + `${token}`)
-bot.startWebhook(urlHook + "/bot" + `${token}`, null, 8800)
+let urlHook = "https://c54d-37-140-17-7.ngrok-free.app"
+// bot.telegram.setWebhook(urlHook + "/bot" + `${token}`)
+// bot.startWebhook(urlHook + "/bot" + `${token}`, null, 8800)
 
+bot.launch({
+  webhook: {
+    // Public domain for webhook; e.g.: example.com
+    domain: urlHook,
+
+    // Port to listen on; e.g.: 8080
+    port: 3001,
+
+    // Optional path to listen for.
+    // `bot.secretPathComponent()` will be used by default
+    // path: urlHook + "/bot" + `${token}`,
+
+    // Optional secret to be sent back in a header for security.
+    // e.g.: `crypto.randomBytes(64).toString("hex")`
+    // secretToken: randomAlphaNumericString,
+  },
+});
