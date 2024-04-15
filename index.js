@@ -1,7 +1,6 @@
 // import TelegramBot from "node-telegram-bot-api"
 import { Telegraf } from "telegraf"
-
-import express from 'express'
+import 'dotenv/config'
 
 const token = '7138409167:AAGCQ-0w101zQYtLYxsxlvdUtwiEYGgF_yI';
 
@@ -11,7 +10,7 @@ const webUrl = "https://gorgeous-dusk-a3880d.netlify.app/"
 
 const bot = new Telegraf(token);
 
-bot.start((ctx) => ctx.sendMessage('Welcome'))
+bot.start((ctx) => ctx.sendMessage('Welcome123'))
 bot.help((ctx) => ctx.reply('Send me a sticker'))
 
 bot.hears('hi', (ctx) => ctx.reply('Hey there'))
@@ -75,7 +74,7 @@ bot.on('message', async (msg) => {
 });
 
 
-let urlHook = "https://bot-back-tab.onrender.com"
+let urlHook = process.env.urlOfHost
 // bot.telegram.setWebhook(urlHook + "/bot" + `${token}`)
 // bot.startWebhook(urlHook + "/bot" + `${token}`, null, 8800)
 
@@ -85,7 +84,7 @@ bot.launch({
     domain: urlHook,
 
     // Port to listen on; e.g.: 8080
-    port: 3001,
+    port: process.env.PORT || 3002,
 
     // Optional path to listen for.
     // `bot.secretPathComponent()` will be used by default
